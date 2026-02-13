@@ -1,0 +1,29 @@
+#app {
+  background-color: var(--color-gray-50);
+  min-height: 100vh;
+}
+
+.background-img {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 15rem;
+  overflow: hidden;
+  line-height: 0;
+}
+.background-picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  display: block;
+}
+
+.background-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

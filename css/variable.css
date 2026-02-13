@@ -1,0 +1,53 @@
+:root {
+  /* Colors */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --color-purple-800: #393a4b;
+  --color-purple-700: #4d5067;
+  --color-purple-600: #5b5e7e;
+  --color-purple-300: #c8cbe7;
+  --color-purple-100: #e3e4f1;
+
+  --color-gray-600: #9495a5;
+  --color-gray-300: #d1d2da;
+  --color-gray-50: #fafafa;
+
+  --color-personal: #393a4b;
+  --color-work: #8c7a3a;
+  --color-shopping: #2f6f63;
+
+  --color-navy-950: #171823;
+  --color-navy-900: #25273d;
+  --color-navy-850: #494c6b;
+
+  --color-blue-500: #3a7cfd;
+
+  /* Gradients */
+  --gradient-1-start: #55ddff;
+  --gradient-1-end: #c058f3;
+  --gradient-1: linear-gradient(135deg, var(--gradient-1-start), var(--gradient-1-end));
+
+  --gradient-2-start: #3710bd;
+  --gradient-2-end: #a42395;
+  --gradient-2: linear-gradient(135deg, var(--gradient-2-start), var(--gradient-2-end));
+
+  /* Typography */
+  --font-family-primary: "Josefin Sans", sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  --text-preset-1-size: 18px;
+  --text-preset-2-size: 14px;
+  --text-preset-3-size: 12px;
+  --text-line-height-100: 100%;
+  --text-letter-spacing-tight: -0.25px;
+
+  /* Spacing */
+  --spacing-0: 0px;
+  --spacing-100: 8px;
+  --spacing-200: 16px;
+  --spacing-300: 24px;
+  --spacing-500: 40px;
+  --spacing-600: 48px;
+}

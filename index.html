@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App - Vanilla JavaScript</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Our CSS -->
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <!-- Main App Container -->
+    <div id="app">
+      <div class="background-img">
+        <picture class="background-picture">
+          <source srcset="/images/bg-mobile-light.jpg" media="(max-width: 600px)" />
+          <source srcset="/images/bg-desktop-light.jpg" media="(min-width: 768px)" />
+
+          <img src="/images/bg-mobile-light.jpg" alt="" />
+        </picture>
+      </div>
+      <section class="todo-section">
+        <div class="wrapper">
+          <header class="todo-header">
+            <h1 class="todo-title">TODO</h1>
+            <div class="theme-container"><img src="/images/icon-moon.svg" alt="" /></div>
+          </header>
+          <form action="form-container" class="todo-create-form">
+            <div class="circle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <circle cx="10" cy="10" r="9.5" fill="white" stroke="#C8CBE7" />
+                <circle
+                  opacity="0.01"
+                  cx="10"
+                  cy="10"
+                  r="10"
+                  fill="url(#paint0_linear_82139_343)"
+                />
+                <path
+                  opacity="0.01"
+                  d="M6.66663 10.2534L8.91321 12.5L13.9132 7.5"
+                  stroke="white"
+                  stroke-width="2"
+                />
+                <defs>
+                  <linearGradien
+                    id="paint0_linear_82139_343"
+                    x1="-10"
+                    y1="10"
+                    x2="10"
+                    y2="30"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#55DDFF" />
+                    <stop offset="1" stop-color="#C058F3" />
+                  </linearGradien>
+                </defs>
+              </svg>
+            </div>
+            <input type="text" required id="todo" placeholder="Create a new todo..." />
+            <div class="category-container category-container--end">
+              <button class="category-item active">
+                <img src="/images/home-1-svgrepo-com.svg" alt="" />
+              </button>
+              <button class="category-item">
+                <img src="/images/work-alt-svgrepo-com.svg" alt="" />
+              </button>
+              <button class="category-item">
+                <img src="/images/shopping-cart-svgrepo-com.svg" alt="" class="" />
+              </button>
+            </div>
+          </form>
+
+          <ul class="todo-container">
+            <li class="todo-item">
+              <button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                >
+                  <circle cx="10" cy="10" r="9.5" fill="white" stroke="#C8CBE7" />
+                  <circle
+                    opacity="0.01"
+                    cx="10"
+                    cy="10"
+                    r="10"
+                    fill="url(#paint0_linear_82139_343)"
+                  />
+                  <path
+                    opacity="0.01"
+                    d="M6.66663 10.2534L8.91321 12.5L13.9132 7.5"
+                    stroke="white"
+                    stroke-width="2"
+                  />
+                  <defs>
+                    <linearGradien
+                      id="paint0_linear_82139_343"
+                      x1="-10"
+                      y1="10"
+                      x2="10"
+                      y2="30"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#55DDFF" />
+                      <stop offset="1" stop-color="#C058F3" />
+                    </linearGradien>
+                  </defs>
+                </svg>
+              </button>
+              <span class="todo-text" id="todo" data-id="${Date.now()}"
+                >My Task is to go outise and work as much as i can in terms of
+                coding</span
+              >
+              <span class="category personal" id="category" data-category="${category}">
+                personal</span
+              >
+              <button class="cross-btn">
+                <img src="/images/icon-cross.svg" alt="" class="cross-icon" />
+              </button>
+            </li>
+            <li class="todo-item">
+              <button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                >
+                  <circle cx="10" cy="10" r="9.5" fill="white" stroke="#C8CBE7" />
+                  <circle
+                    opacity="0.01"
+                    cx="10"
+                    cy="10"
+                    r="10"
+                    fill="url(#paint0_linear_82139_343)"
+                  />
+                  <path
+                    opacity="0.01"
+                    d="M6.66663 10.2534L8.91321 12.5L13.9132 7.5"
+                    stroke="white"
+                    stroke-width="2"
+                  />
+                  <defs>
+                    <linearGradien
+                      id="paint0_linear_82139_343"
+                      x1="-10"
+                      y1="10"
+                      x2="10"
+                      y2="30"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#55DDFF" />
+                      <stop offset="1" stop-color="#C058F3" />
+                    </linearGradien>
+                  </defs>
+                </svg>
+              </button>
+              <span class="todo-text" id="todo" data-id="${Date.now()}"
+                >My Task is to go outise and work as much as i can in terms of
+                coding</span
+              >
+              <span class="category personal" id="category" data-category="${category}">
+                personal</span
+              >
+              <button class="cross-btn">
+                <img src="/images/icon-cross.svg" alt="" class="cross-icon" />
+              </button>
+            </li>
+            <li class="todo-item">
+              <button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                >
+                  <circle cx="10" cy="10" r="9.5" fill="white" stroke="#C8CBE7" />
+                  <circle
+                    opacity="0.01"
+                    cx="10"
+                    cy="10"
+                    r="10"
+                    fill="url(#paint0_linear_82139_343)"
+                  />
+                  <path
+                    opacity="0.01"
+                    d="M6.66663 10.2534L8.91321 12.5L13.9132 7.5"
+                    stroke="white"
+                    stroke-width="2"
+                  />
+                  <defs>
+                    <linearGradien
+                      id="paint0_linear_82139_343"
+                      x1="-10"
+                      y1="10"
+                      x2="10"
+                      y2="30"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#55DDFF" />
+                      <stop offset="1" stop-color="#C058F3" />
+                    </linearGradien>
+                  </defs>
+                </svg>
+              </button>
+              <span class="todo-text" id="todo" data-id="${Date.now()}"
+                >My Task is to go outise and work as much as i can in terms of
+                coding</span
+              >
+              <span class="category personal" id="category" data-category="${category}">
+                personal</span
+              >
+              <button class="cross-btn">
+                <img src="/images/icon-cross.svg" alt="" class="cross-icon" />
+              </button>
+            </li>
+            <li class="todo-item">
+              <button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                >
+                  <circle cx="10" cy="10" r="9.5" fill="white" stroke="#C8CBE7" />
+                  <circle
+                    opacity="0.01"
+                    cx="10"
+                    cy="10"
+                    r="10"
+                    fill="url(#paint0_linear_82139_343)"
+                  />
+                  <path
+                    opacity="0.01"
+                    d="M6.66663 10.2534L8.91321 12.5L13.9132 7.5"
+                    stroke="white"
+                    stroke-width="2"
+                  />
+                  <defs>
+                    <linearGradien
+                      id="paint0_linear_82139_343"
+                      x1="-10"
+                      y1="10"
+                      x2="10"
+                      y2="30"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#55DDFF" />
+                      <stop offset="1" stop-color="#C058F3" />
+                    </linearGradien>
+                  </defs>
+                </svg>
+              </button>
+              <span class="todo-text" id="todo" data-id="${Date.now()}"
+                >My Task is to go outise and work as much as i can in terms of
+                coding</span
+              >
+              <span class="category personal" id="category" data-category="${category}">
+                personal</span
+              >
+              <button class="cross-btn">
+                <img src="/images/icon-cross.svg" alt="" class="cross-icon" />
+              </button>
+            </li>
+            <li class="todo-item">
+              <button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                >
+                  <circle cx="10" cy="10" r="9.5" fill="white" stroke="#C8CBE7" />
+                  <circle
+                    opacity="0.01"
+                    cx="10"
+                    cy="10"
+                    r="10"
+                    fill="url(#paint0_linear_82139_343)"
+                  />
+                  <path
+                    opacity="0.01"
+                    d="M6.66663 10.2534L8.91321 12.5L13.9132 7.5"
+                    stroke="white"
+                    stroke-width="2"
+                  />
+                  <defs>
+                    <linearGradien
+                      id="paint0_linear_82139_343"
+                      x1="-10"
+                      y1="10"
+                      x2="10"
+                      y2="30"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#55DDFF" />
+                      <stop offset="1" stop-color="#C058F3" />
+                    </linearGradien>
+                  </defs>
+                </svg>
+              </button>
+              <span class="todo-text" id="todo" data-id="${Date.now()}"
+                >My Task is to go outise and work as much as i can in terms of
+                coding</span
+              >
+              <span class="category personal" id="category" data-category="${category}">
+                personal</span
+              >
+              <button class="cross-btn">
+                <img src="/images/icon-cross.svg" alt="" class="cross-icon" />
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="todoCounter-container">
+          <span class="counter">1 items left</span>
+          <button class="clear-btn">Clear Completed</button>
+        </div>
+      </section>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
