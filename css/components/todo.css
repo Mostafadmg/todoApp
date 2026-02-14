@@ -11,6 +11,8 @@
   padding-inline: 1.5rem;
   display: flex;
   flex-direction: column;
+  max-width: 35rem;
+  margin-inline: auto;
 }
 
 /* Todo app header */
@@ -94,7 +96,7 @@
 }
 
 .category-item img {
-  transition: transform 0.3s ease;
+  transition: transform 0.2s;
 }
 
 .category-item:hover img {
@@ -149,6 +151,7 @@
   cursor: pointer;
   border-bottom: 1px solid var(--color-purple-300);
   transition: all 0.2s;
+  height: 4rem;
 }
 
 .todo-item:hover {
@@ -210,7 +213,7 @@
   background-color: var(--color-white);
   display: flex;
   justify-content: space-between;
-  padding: 1rem 1.25rem;
+  padding: 1.25rem 1.25rem;
   border-bottom-left-radius: 0.3125rem;
   border-bottom-right-radius: 0.3125rem;
 }
@@ -221,16 +224,25 @@
   font-feature-settings:
     "liga" off,
     "clig" off;
-
-  /* Text Preset 3 - Josefin Sans Regular - 12px - 100% Line Height - -0.25px Line Spacing */
   font-family: "Josefin Sans";
   font-size: 0.75rem;
   font-style: normal;
   font-weight: 400;
+  cursor: pointer;
   line-height: 100%; /* 0.75rem */
   letter-spacing: -0.01563rem;
+  transition: all 0.2s;
 }
 
+.clear-btn:hover {
+  color: var(--color-purple-700);
+  scale: 1.01;
+}
+
+.clear-btn:active {
+  color: var(--color-purple-700);
+  scale: 0.98;
+}
 .counter {
   color: var(--colors-gray-600, #9495a5);
   font-feature-settings:
@@ -244,4 +256,60 @@
   font-weight: 400;
   line-height: 100%; /* 0.75rem */
   letter-spacing: -0.01563rem;
+}
+
+.theme-icon {
+  width: 1.5695rem;
+  height: 1.625rem;
+  display: block;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.theme-icon:hover {
+  transform: scale(1.05);
+}
+
+.filter-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: var(--spacing-200);
+  background-color: var(--color-white);
+  margin-top: var(--spacing-200);
+  border-radius: 0.3125rem;
+  background: var(--colors-white, #fff);
+  box-shadow: 0 35px 50px -15px rgba(194, 195, 214, 0.5);
+  height: 3rem;
+}
+.filter-btn {
+  color: var(--colors-gray-600, #9495a5);
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+
+  /* Text Preset 2 (Bold) - Josefin Sans Bold - 14px - 100% Line Height - -0.25px Line Spacing */
+  font-family: "Josefin Sans";
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%; /* 0.875rem */
+  letter-spacing: -0.01563rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  color: var(--colors-blue-500, #3a7cfd);
+  transform: scale(1.05);
+}
+
+.filter-btn.active {
+  color: var(--colors-blue-500, #3a7cfd);
+}
+.filter-btn:active {
+  transform: scale(0.98);
+}
+
+.toggle-complete-btn {
 }
