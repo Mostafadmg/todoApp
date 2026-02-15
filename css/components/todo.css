@@ -55,6 +55,9 @@
   border: 0;
   background: transparent;
   outline: none;
+  box-shadow: none;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .todo-create-form input::placeholder {
@@ -218,6 +221,11 @@
 .cross-btn {
   flex-shrink: 0;
   cursor: pointer;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .todo-item:hover .cross-icon {
@@ -261,6 +269,11 @@
   line-height: 100%; /* 0.75rem */
   letter-spacing: -0.01563rem;
   transition: all 0.2s;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .clear-btn:hover {
@@ -308,6 +321,8 @@
   background: transparent;
   line-height: 0;
   cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .filter-container {
@@ -336,6 +351,11 @@
   letter-spacing: -0.01563rem;
   cursor: pointer;
   transition: all 0.2s;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .filter-btn:hover {
@@ -359,6 +379,8 @@
   background: transparent;
   line-height: 0;
   cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .circle {
@@ -370,6 +392,8 @@
   background: transparent;
   line-height: 0;
   cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .toggle-complete-btn .check-base,
