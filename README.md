@@ -1,47 +1,116 @@
 # Todo App - Vanilla JavaScript
 
-A professional todo application built with vanilla JavaScript, focusing on clean architecture and state management patterns.
+A professional todo application built with vanilla JavaScript, Vite, and Tailwind CSS, focusing on clean architecture and state management patterns.
 
-## 🎯 Learning Goals
-- Master JavaScript state management
-- Understand separation of concerns
-- Practice DOM manipulation
-- Implement localStorage persistence
-- Build professional folder structure
+## 🚀 Live Demo
+[View Live App](https://mostafadmg.github.io/todoApp/)
+
+## 🎯 Features
+✅ Add/Delete/Toggle todos  
+✅ Filter by status (All/Active/Completed)  
+✅ Filter by category (Work/Personal/Shopping)  
+✅ Dark/Light theme toggle  
+✅ LocalStorage persistence  
+✅ Drag & drop reordering  
+✅ Responsive design (mobile-first)  
 
 ## 📁 Project Structure
 ```
 todo-app-main/
-├── index.html          # Main HTML entry point
+├── index.html              # Entry point
+├── vite.config.js          # Vite configuration
 ├── css/
-│   └── styles.css      # Application styles
+│   ├── styles.css          # Main stylesheet
+│   ├── variable.css        # CSS variables
+│   ├── layout.css          # Layout styles
+│   └── components/         # Component styles
 ├── js/
-│   ├── state.js        # State management (data)
-│   ├── ui.js           # UI rendering (display)
-│   ├── storage.js      # LocalStorage (persistence)
-│   └── app.js          # Main coordinator
-└── images/             # Assets (icons, backgrounds)
+│   ├── main.js             # App initialization
+│   ├── state/              # State management
+│   │   ├── state.js        # App state
+│   │   └── stateManagement.js
+│   ├── components/         # UI components
+│   │   ├── app.js
+│   │   ├── form.js
+│   │   ├── todo.js
+│   │   └── ...
+│   ├── handlers/           # Event handlers
+│   │   ├── dragHandlers.js
+│   │   ├── filterHandlers.js
+│   │   └── ...
+│   └── storage/            # LocalStorage
+│       └── storage.js
+└── images/                 # Assets
 ```
 
-## 🚀 Features
-- [ ] Add/Delete/Toggle todos
-- [ ] Filter by status (All/Active/Completed)
-- [ ] Filter by category (Work/Personal/Shopping)
-- [ ] Dark/Light theme toggle
-- [ ] LocalStorage persistence
-- [ ] Drag & drop reordering
-
 ## 🛠️ Development
-1. Open `index.html` in a browser
-2. Open DevTools Console to see logs
-3. Start coding in `js/` files
+
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/Mostafadmg/todoApp.git
+cd todoApp
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+The app will open at `http://localhost:3000`
+
+### Build for Production
+```bash
+npm run build
+```
+
+The production build will be in the `dist/` folder.
+
+### Preview Production Build
+```bash
+npm run preview
+```
 
 ## 📚 Architecture Pattern
+
 **Separation of Concerns:**
-- `state.js` - Single source of truth (data only)
-- `ui.js` - DOM manipulation (display only)
-- `storage.js` - Persistence (save/load only)
-- `app.js` - Coordination (connects everything)
+- **State** (`state/`) - Single source of truth for data
+- **Components** (`components/`) - Pure UI rendering functions
+- **Handlers** (`handlers/`) - Event handling and user interactions
+- **Storage** (`storage/`) - LocalStorage persistence
+
+**Data Flow:**
+```
+User Action → Handler → State Update → Save to Storage → Re-render UI
+```
+
+## 🚀 Deployment
+
+This project uses GitHub Actions for automatic deployment to GitHub Pages.
+
+### Setup GitHub Pages:
+1. Go to repository Settings → Pages
+2. Source: "GitHub Actions"
+3. Push to main branch triggers automatic deployment
+
+The site will be available at: `https://yourusername.github.io/todoApp/`
+
+## 🎓 Learning Goals Achieved
+✅ Master JavaScript state management  
+✅ Understand separation of concerns  
+✅ Practice DOM manipulation  
+✅ Implement localStorage persistence  
+✅ Build professional folder structure  
+✅ Use modern build tools (Vite)  
+✅ Implement drag & drop with HTML5 API  
+
+## 🙏 Credits
+Design based on Frontend Mentor's Todo App challenge.
 
 ---
 Built with ❤️ as a learning project

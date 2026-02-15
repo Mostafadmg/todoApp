@@ -25,6 +25,7 @@ export default defineConfig({
     minify: 'esbuild', // Use built-in minifier (no extra terser dependency required)
   },
 
-  // Base public path (important for deployment)
-  base: './', // Use relative paths (works on any server)
+  // Base public path for GitHub Pages
+  // Change '/todoApp/' to match your repository name
+  base: process.env.NODE_ENV === 'production' ? '/todoApp/' : './',
 })
