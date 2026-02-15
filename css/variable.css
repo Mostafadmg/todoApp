@@ -33,7 +33,7 @@
   --gradient-2: linear-gradient(135deg, var(--gradient-2-start), var(--gradient-2-end));
 
   /* Typography */
-  --font-family-primary: "Josefin Sans", sans-serif;
+  --font-family-primary: 'Josefin Sans', sans-serif;
   --font-weight-regular: 400;
   --font-weight-bold: 700;
 
@@ -50,4 +50,44 @@
   --spacing-300: 24px;
   --spacing-500: 40px;
   --spacing-600: 48px;
+
+  /* Theme Colors (Light by default) */
+  --bg-body: #fafafa;
+  --bg-todo-item: #ffffff;
+  --bg-todo-hover: #e3e4f1;
+  --text-primary: #494c6b;
+  --text-secondary: #9495a5;
+  --border-color: #e3e4f1;
+  --category-icon-filter: none;
+  --category-icon-active-filter: none;
+  --category-active-bg: var(--color-purple-300);
+  --category-active-border: var(--color-purple-300);
+  --delete-icon-filter: none;
+  --delete-icon-hover-filter: none;
+  --panel-shadow: 0 35px 50px -15px rgba(194, 195, 214, 0.5);
+  --panel-shadow-soft:
+    0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* Dark Theme */
+[data-theme='dark'] {
+  --bg-body: #171823;
+  --bg-todo-item: #25273d;
+  --bg-todo-hover: #393a4b;
+  --text-primary: #c8cbe7;
+  --text-secondary: #767992;
+  --border-color: #393a4b;
+  --category-icon-filter: brightness(0) invert(0.82);
+  --category-icon-active-filter: brightness(0) invert(0.96);
+  --category-active-bg: rgba(58, 124, 253, 0.22);
+  --category-active-border: rgba(58, 124, 253, 0.72);
+  --delete-icon-filter: brightness(0) invert(0.88);
+  --delete-icon-hover-filter:
+    brightness(0) invert(0.94)
+    drop-shadow(0 0 0.2rem rgba(255, 255, 255, 0.28));
+  --panel-shadow: 0 18px 34px -18px rgba(0, 0, 0, 0.8);
+  --panel-shadow-soft:
+    0 14px 24px -14px rgba(0, 0, 0, 0.7),
+    0 6px 10px -8px rgba(0, 0, 0, 0.55);
 }

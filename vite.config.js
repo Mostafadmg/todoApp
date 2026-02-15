@@ -1,10 +1,12 @@
 // vite.config.js - Vite Configuration File
 // This file tells Vite how to run and build your project
 
-import { defineConfig } from "vite";
-import tailwindcss from "@tailwindcss/vite";
+import { defineConfig } from 'vite'
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
+  // Ensure Vite treats repository root as the project root
+  root: '.',
   plugins: [tailwindcss()],
   css: {
     devSourcemap: true, // Show original CSS file in DevTools during dev
@@ -18,11 +20,11 @@ export default defineConfig({
 
   // Production build settings
   build: {
-    outDir: "dist", // Output folder for production build
+    outDir: 'dist', // Output folder for production build
     sourcemap: true, // Generate source maps (helps debugging)
-    minify: "terser", // Minify JavaScript for smaller file size
+    minify: 'esbuild', // Use built-in minifier (no extra terser dependency required)
   },
 
   // Base public path (important for deployment)
-  base: "./", // Use relative paths (works on any server)
-});
+  base: './', // Use relative paths (works on any server)
+})

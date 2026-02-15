@@ -9,6 +9,7 @@
   z-index: 10;
   margin-top: -12.5rem;
   padding-inline: 1.5rem;
+  padding-bottom: calc(var(--spacing-300) + env(safe-area-inset-bottom));
   display: flex;
   flex-direction: column;
   max-width: 35rem;
@@ -46,10 +47,8 @@
   gap: 0.75rem;
   padding: 1rem;
   border-radius: 0.375rem;
-  background-color: var(--color-white);
-  box-shadow:
-    0 10px 15px -3px rgb(0 0 0 / 0.1),
-    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  background-color: var(--bg-todo-item);
+  box-shadow: var(--panel-shadow-soft);
 }
 
 .todo-create-form input {
@@ -59,11 +58,11 @@
 .todo-create-form input::placeholder {
   color: var(--colors-gray-600, #9495a5);
   font-feature-settings:
-    "liga" off,
-    "clig" off;
+    'liga' off,
+    'clig' off;
 
   /* Text Preset 1 - Josefin Sans Regular - 18px - 100% Line Height - -0.25px Line Spacing */
-  font-family: "Josefin Sans";
+  font-family: 'Josefin Sans';
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;
@@ -82,21 +81,28 @@
 }
 
 .category-item {
-  width: 1.1rem;
-  height: 1.1rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  padding: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: none;
+  border: 1px solid var(--border-color);
   border-radius: 0.3rem;
-  background: var(--color-white);
+  background: var(--bg-todo-item);
   cursor: pointer;
   position: relative;
+  line-height: 0;
   box-sizing: border-box;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .category-item img {
-  transition: transform 0.2s;
+  transition:
+    transform 0.2s,
+    filter 0.2s ease;
 }
 
 .category-item:hover img {
@@ -104,11 +110,12 @@
 }
 
 .category-item.active {
-  background-color: var(--color-purple-300);
+  background-color: var(--category-active-bg);
+  border-color: var(--category-active-border);
 }
 
 .category-item::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: -0.15rem;
   border: 2px solid transparent;
@@ -125,21 +132,26 @@
 .category-item.active::after {
   opacity: 1;
   transform: scale(1.05);
-  border-color: var(--color-purple-300);
+  border-color: var(--category-active-border);
 }
 
 .category-item img {
-  width: 1.4rem;
-  height: 1.4rem;
+  width: 1.1rem;
+  height: 1.1rem;
   object-fit: contain;
-  filter: none;
+  filter: var(--category-icon-filter);
+}
+
+.category-item.active img {
+  filter: var(--category-icon-active-filter);
 }
 
 .todo-container {
-  background-color: var(--color-white);
+  background-color: var(--bg-todo-item);
   border-radius: 0.3125rem;
-  box-shadow: 0 35px 50px -15px rgba(194, 195, 214, 0.5);
+  box-shadow: var(--panel-shadow);
   overflow: hidden;
+  transition: background-color 0.3s ease;
 }
 
 .todo-item {
@@ -149,20 +161,29 @@
   align-items: center;
   gap: var(--spacing-200);
   cursor: pointer;
-  border-bottom: 1px solid var(--color-purple-300);
-  transition: all 0.2s;
+  border-bottom: 1px solid var(--border-color);
+  transition: opacity 0.2s;
   height: 4rem;
 }
 
+.todo-item.completed {
+  opacity: 0.5;
+}
+
+.todo-item.completed .todo-text {
+  color: var(--colors-gray-600, #9495a5);
+  text-decoration: line-through;
+}
+
 .todo-item:hover {
-  background-color: var(--color-purple-100);
+  background-color: var(--bg-todo-hover);
 }
 
 .todo-item .todo-text {
-  color: var(--colors-navy-850, #494c6b);
+  color: var(--text-primary);
   font-feature-settings:
-    "liga" off,
-    "clig" off;
+    'liga' off,
+    'clig' off;
 
   font-size: 0.75rem;
   font-style: normal;
@@ -199,6 +220,8 @@
 
 .todo-item:hover .cross-icon {
   opacity: 1;
+  filter: var(--delete-icon-hover-filter);
+  transform: scale(1.04);
 }
 
 .cross-icon {
@@ -206,11 +229,15 @@
   height: 0.73656rem;
   flex-shrink: 0;
   opacity: 0;
-  transition: all 0.2s;
+  filter: var(--delete-icon-filter);
+  transition:
+    opacity 0.2s ease,
+    filter 0.2s ease,
+    transform 0.2s ease;
 }
 
 .todoCounter-container {
-  background-color: var(--color-white);
+  background-color: var(--bg-todo-item);
   display: flex;
   justify-content: space-between;
   padding: 1.25rem 1.25rem;
@@ -222,9 +249,9 @@
   color: var(--colors-gray-600, #9495a5);
   text-align: right;
   font-feature-settings:
-    "liga" off,
-    "clig" off;
-  font-family: "Josefin Sans";
+    'liga' off,
+    'clig' off;
+  font-family: 'Josefin Sans';
   font-size: 0.75rem;
   font-style: normal;
   font-weight: 400;
@@ -246,11 +273,11 @@
 .counter {
   color: var(--colors-gray-600, #9495a5);
   font-feature-settings:
-    "liga" off,
-    "clig" off;
+    'liga' off,
+    'clig' off;
 
   /* Text Preset 3 - Josefin Sans Regular - 12px - 100% Line Height - -0.25px Line Spacing */
-  font-family: "Josefin Sans";
+  font-family: 'Josefin Sans';
   font-size: 0.75rem;
   font-style: normal;
   font-weight: 400;
@@ -270,26 +297,36 @@
   transform: scale(1.05);
 }
 
+.theme-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  line-height: 0;
+  cursor: pointer;
+}
+
 .filter-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: var(--spacing-200);
-  background-color: var(--color-white);
+  background-color: var(--bg-todo-item);
   margin-top: var(--spacing-200);
   border-radius: 0.3125rem;
-  background: var(--colors-white, #fff);
-  box-shadow: 0 35px 50px -15px rgba(194, 195, 214, 0.5);
+  box-shadow: var(--panel-shadow);
   height: 3rem;
 }
 .filter-btn {
   color: var(--colors-gray-600, #9495a5);
   font-feature-settings:
-    "liga" off,
-    "clig" off;
+    'liga' off,
+    'clig' off;
 
   /* Text Preset 2 (Bold) - Josefin Sans Bold - 14px - 100% Line Height - -0.25px Line Spacing */
-  font-family: "Josefin Sans";
+  font-family: 'Josefin Sans';
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 700;
@@ -312,4 +349,78 @@
 }
 
 .toggle-complete-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  line-height: 0;
+  cursor: pointer;
+}
+
+.circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  line-height: 0;
+  cursor: pointer;
+}
+
+.toggle-complete-btn .check-base,
+.circle .check-base {
+  fill: var(--bg-todo-item);
+  stroke: var(--border-color);
+  transition:
+    fill 0.2s ease,
+    stroke 0.2s ease;
+}
+
+/* Checkmark and gradient circle - hidden by default */
+.toggle-complete-btn .check-circle {
+  opacity: 0;
+  fill-opacity: 0;
+  transition: all 0.2s ease;
+}
+
+.toggle-complete-btn .check-mark {
+  opacity: 0;
+  stroke-opacity: 0;
+  transition: all 0.2s ease;
+}
+
+/* Show checkmark and gradient when completed */
+.toggle-complete-btn.completed .check-circle {
+  opacity: 1;
+  fill-opacity: 1;
+}
+
+.toggle-complete-btn.completed .check-mark {
+  opacity: 1;
+  stroke-opacity: 1;
+}
+
+/* Hover effect - preview on incomplete todos */
+.toggle-complete-btn:hover .check-circle {
+  opacity: 0.3;
+  fill-opacity: 0.3;
+}
+
+.toggle-complete-btn:hover .check-mark {
+  opacity: 0.3;
+  stroke-opacity: 0.3;
+}
+
+/* Keep full opacity on hover when completed */
+.toggle-complete-btn.completed:hover .check-circle {
+  opacity: 1;
+  fill-opacity: 1;
+}
+
+.toggle-complete-btn.completed:hover .check-mark {
+  opacity: 1;
+  stroke-opacity: 1;
 }

@@ -1,6 +1,7 @@
 #app {
-  background-color: var(--color-gray-50);
+  background-color: var(--bg-body);
   min-height: 100vh;
+  transition: background-color 0.3s ease;
 }
 
 .background-img {
@@ -26,4 +27,26 @@
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* Show move cursor when hovering over draggable todos */
+.todo-item[draggable='true'] {
+  cursor: move;
+}
+
+/* Blue line above the drop target */
+.todo-item.drag-over {
+  border-top: 2px solid var(--color-blue-500);
+}
+
+/* Grabbing hand cursor when actively dragging */
+.todo-item:active {
+  cursor: grabbing;
+}
+
+/* Smooth transition for drag effects */
+.todo-item {
+  transition:
+    border-top 0.2s ease,
+    margin-top 0.2s ease;
 }
