@@ -2,7 +2,7 @@ import { appState } from '../state/state.js'
 
 export function renderForm() {
   const selectedCategory = appState.currentCategory
-  const baseUrl = import.meta.env.BASE_URL
+  const baseUrl = './'
   const themeIcon =
     appState.theme === 'light'
       ? `${baseUrl}images/icon-moon.svg`

@@ -4,7 +4,9 @@
 import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
 
-export default defineConfig({
+const repoName = 'todoApp'
+
+export default defineConfig(({ command }) => ({
   // Ensure Vite treats repository root as the project root
   root: '.',
   plugins: [tailwindcss()],
@@ -26,6 +28,5 @@ export default defineConfig({
   },
 
   // Base public path for GitHub Pages
-  // Change '/todoApp/' to match your repository name
-  base: process.env.NODE_ENV === 'production' ? '/todoApp/' : './',
-})
+  base: command === 'build' ? `/${repoName}/` : '/',
+}))

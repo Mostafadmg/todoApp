@@ -1,5 +1,5 @@
 export function renderTodoList(todos) {
-  const baseUrl = import.meta.env.BASE_URL
+  const baseUrl = './'
 
   return todos
     .map((todo) => {

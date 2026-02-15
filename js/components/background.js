@@ -2,7 +2,7 @@ import { appState } from '../state/state.js'
 
 export function renderBackground() {
   const theme = appState.theme
-  const baseUrl = import.meta.env.BASE_URL
+  const baseUrl = './'
 
   return /*html*/ `
        <div class="background-img">
