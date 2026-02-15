@@ -465,7 +465,7 @@
 /* ===== DRAG AND DROP STYLES ===== */
 
 .todo-item[draggable='true'] {
-  cursor: move;
+  cursor: pointer;
 }
 
 .todo-item.drag-over {
@@ -473,5 +473,5 @@
 }
 
 .todo-item:active {
-  cursor: grabbing;
+  cursor: pointer;
 }

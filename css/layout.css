@@ -29,9 +29,9 @@
   display: block;
 }
 
-/* Show move cursor when hovering over draggable todos */
+/* Keep pointer cursor while still allowing drag behavior */
 .todo-item[draggable='true'] {
-  cursor: move;
+  cursor: pointer;
 }
 
 /* Blue line above the drop target */
@@ -39,9 +39,9 @@
   border-top: 2px solid var(--color-blue-500);
 }
 
-/* Grabbing hand cursor when actively dragging */
+/* Keep pointer during mouse-down as requested */
 .todo-item:active {
-  cursor: grabbing;
+  cursor: pointer;
 }
 
 /* Smooth transition for drag effects */
