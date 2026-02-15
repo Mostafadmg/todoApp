@@ -22,3 +22,24 @@ body {
   margin: 0;
   overflow-x: hidden;
 }
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+input,
+textarea,
+select {
+  background: transparent;
+  border: 0;
+}
