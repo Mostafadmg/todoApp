@@ -1,4 +1,6 @@
 import { appState } from './state.js'
+import { saveToStorage } from '../storage/storage.js'
+
 
 export function addToDo(text, category) {
   const newToDo = {
@@ -9,18 +11,22 @@ export function addToDo(text, category) {
   }
 
   appState.todos.push(newToDo)
+  saveToStorage('todoAppState', appState)
 }
 
 export function toggleTheme() {
   appState.theme = appState.theme === 'light' ? 'dark' : 'light'
+  saveToStorage('todoAppState', appState)
 }
 
 export function setFilterStatus(filter) {
   appState.filterStatus = filter
+  saveToStorage('todoAppState', appState)
 }
 
 export function setCategoryStatus(category) {
   appState.filterCategory = category
+  saveToStorage('todoAppState', appState)
 }
 
 export function toggleCompleted(todoId) {
@@ -30,13 +36,16 @@ export function toggleCompleted(todoId) {
     console.warn(
       `Todo with id of ${todoId} not found in toggleCompleted function in stateMangement.js`,
     )
+    return
   }
 
   todo.completed = !todo.completed
+  saveToStorage('todoAppState', appState)
 }
 
 export function deleteTodo(todoId) {
   appState.todos = appState.todos.filter((todo) => todo.id !== todoId)
+  saveToStorage('todoAppState', appState)
 }
 
 // stateManagement.js
@@ -61,10 +70,12 @@ export function getFilteredTodos(todos, filterStatus, filterCategory) {
 
 export function setCurrentCategory(category) {
   appState.currentCategory = category
+  saveToStorage('todoAppState', appState)
 }
 
 export function clearCompleted() {
   appState.todos = appState.todos.filter((todo) => !todo.completed)
+  saveToStorage('todoAppState', appState)
 }
 export function reorderTodos(draggedId, targetId) {
   // Find the positions in the array
@@ -79,6 +90,8 @@ export function reorderTodos(draggedId, targetId) {
 
   // Step 2: Insert it at the target position
   appState.todos.splice(targetIndex, 0, draggedTodo)
+
+  saveToStorage('todoAppState', appState)
 
   console.log(
     '✅ Reordered!',

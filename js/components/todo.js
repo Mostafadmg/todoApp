@@ -10,7 +10,7 @@ export function renderTodoList(todos) {
   <li
           class="todo-item ${todo.completed ? 'completed' : ''}"
           data-todo-id="${todo.id}"
-          data-category="personal"
+          data-category="${todo.category}"
           data-completed="${todo.completed}"
           draggable="true"
         >
@@ -54,7 +54,7 @@ export function renderTodoList(todos) {
           <span class="todo-text" data-field="text"> ${todo.text} </span>
           <span class="category ${todo.category}" data-field="category"> ${todo.category} </span>
           <button class="cross-btn" data-action="delete-todo" aria-label="Delete todo">
-            <img src="${baseUrl}images/icon-cross.svg" alt="" class="cross-icon" />
+            <img src="${baseUrl}images/icon-cross.svg" alt="" class="cross-icon" width="12" height="12" />
           </button>
         </li>
   `

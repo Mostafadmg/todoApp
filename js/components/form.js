@@ -12,7 +12,7 @@ export function renderForm() {
           <header class="todo-header">
       <h1 class="todo-title">TODO</h1>
       <button class="theme-container" data-action="toggle-theme" aria-label="Toggle theme">
-        <img src="${themeIcon}" alt="" class="theme-icon" />
+        <img src="${themeIcon}" alt="" class="theme-icon" width="25" height="26" />
       </button>
     </header>
     <form class="todo-create-form" data-form="create-todo">
@@ -72,7 +72,7 @@ export function renderForm() {
           aria-label="Personal category"
           aria-pressed="${selectedCategory === 'personal' ? 'true' : 'false'}"
         >
-          <img src="${baseUrl}images/home-1-svgrepo-com.svg" alt="" />
+          <img src="${baseUrl}images/home-1-svgrepo-com.svg" alt="" width="18" height="18" />
         </button>
         <button
           type="button"
@@ -81,7 +81,7 @@ export function renderForm() {
           aria-label="Work category"
           aria-pressed="${selectedCategory === 'work' ? 'true' : 'false'}"
         >
-          <img src="${baseUrl}images/work-alt-svgrepo-com.svg" alt="" />
+          <img src="${baseUrl}images/work-alt-svgrepo-com.svg" alt="" width="18" height="18" />
         </button>
         <button
           type="button"
@@ -90,7 +90,7 @@ export function renderForm() {
           aria-label="Shopping category"
           aria-pressed="${selectedCategory === 'shopping' ? 'true' : 'false'}"
         >
-          <img src="${baseUrl}images/shopping-cart-svgrepo-com.svg" alt="" />
+          <img src="${baseUrl}images/shopping-cart-svgrepo-com.svg" alt="" width="18" height="18" />
         </button>
       </div>
     </form>

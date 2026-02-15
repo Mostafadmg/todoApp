@@ -21,7 +21,7 @@ export function renderStatusFilters(currentFilter) {
         class="filter-btn ${currentFilter === 'all' ? 'active' : ''}"
         data-filter="status"
         data-value="all"
-        aria-pressed="true"
+        aria-pressed="${currentFilter === 'all' ? 'true' : 'false'}"
       >
         All
       </button>
@@ -29,7 +29,7 @@ export function renderStatusFilters(currentFilter) {
         class="filter-btn ${currentFilter === 'active' ? 'active' : ''}"
         data-filter="status"
         data-value="active"
-        aria-pressed="false"
+        aria-pressed="${currentFilter === 'active' ? 'true' : 'false'}"
       >
         Active
       </button>
@@ -37,7 +37,7 @@ export function renderStatusFilters(currentFilter) {
         class="filter-btn ${currentFilter === 'completed' ? 'active' : ''}"
         data-filter="status"
         data-value="completed"
-        aria-pressed="false"
+        aria-pressed="${currentFilter === 'completed' ? 'true' : 'false'}"
       >
         Completed
       </button>
@@ -57,7 +57,7 @@ export function renderCategoryFilters(currentCategory) {
         class="filter-btn ${currentCategory === 'all' ? 'active' : ''}"
         data-filter="category"
         data-value="all"
-        aria-pressed="true"
+        aria-pressed="${currentCategory === 'all' ? 'true' : 'false'}"
       >
         All
       </button>
@@ -65,7 +65,7 @@ export function renderCategoryFilters(currentCategory) {
         class="filter-btn ${currentCategory === 'work' ? 'active' : ''}"
         data-filter="category"
         data-value="work"
-        aria-pressed="false"
+        aria-pressed="${currentCategory === 'work' ? 'true' : 'false'}"
       >
         Work
       </button>
@@ -73,7 +73,7 @@ export function renderCategoryFilters(currentCategory) {
         class="filter-btn ${currentCategory === 'personal' ? 'active' : ''}"
         data-filter="category"
         data-value="personal"
-        aria-pressed="false"
+        aria-pressed="${currentCategory === 'personal' ? 'true' : 'false'}"
       >
         Personal
       </button>
@@ -81,7 +81,7 @@ export function renderCategoryFilters(currentCategory) {
         class="filter-btn ${currentCategory === 'shopping' ? 'active' : ''}"
         data-filter="category"
         data-value="shopping"
-        aria-pressed="false"
+        aria-pressed="${currentCategory === 'shopping' ? 'true' : 'false'}"
       >
         Shopping
       </button>

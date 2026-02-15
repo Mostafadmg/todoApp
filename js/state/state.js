@@ -1,4 +1,7 @@
-export const appState = {
+import { loadFromStorage } from '../storage/storage.js'
+
+// Default state (used if nothing saved in localStorage)
+const defaultState = {
   todos: [
     {
       id: 1,
@@ -18,27 +21,17 @@ export const appState = {
       completed: false,
       category: 'personal',
     },
-    {
-      id: 4,
-      text: 'Buy apple',
-      completed: false,
-      category: 'personal',
-    },
-    {
-      id: 5,
-      text: 'Buy apple',
-      completed: true,
-      category: 'work',
-    },
-    {
-      id: 6,
-      text: 'Buy apple',
-      completed: true,
-      category: 'shopping',
-    },
   ],
   theme: 'light',
   filterStatus: 'all',
   filterCategory: 'all',
   currentCategory: 'personal',
 }
+
+// Try to load saved state from localStorage
+const savedState = loadFromStorage('todoAppState')
+
+// Use saved state if it exists, otherwise use default
+export const appState = savedState || defaultState
+
+console.log('📦 App state loaded:', savedState ? 'from localStorage' : 'using defaults')

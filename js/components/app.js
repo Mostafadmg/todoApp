@@ -23,6 +23,7 @@ export function renderApp(state) {
       </div>
       ${renderCounterContainer(state.todos)} ${renderStatusFilters(state.filterStatus)}
       ${renderCategoryFilters(state.filterCategory)}
+      <p class="drag-drop-hint">Drag and drop to rearrange todos</p>
     </section>
   `
 }
